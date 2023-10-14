@@ -1,5 +1,6 @@
 import 'package:caller_app/data/const/constantvariables.dart';
 import 'package:caller_app/features/authentication/signup/ui/signup_screen.dart';
+import 'package:caller_app/features/dashboard/ui/dashboard.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -101,20 +102,25 @@ class _LoginScreenState extends State<LoginScreen> {
                       ),
                     ),
                     SizedBox(height: size.height*0.07),
-                    Container(
-                      height: size.height*0.06,
-                      width: size.width*0.4,
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(12),
-                          color: KConstColors.primaryColor
-                      ),
-                      child: Center(
-                        child: Text(
-                          "Sign In",
-                          style: TextStyle(
-                              fontWeight: FontWeight.bold,
-                              fontSize: 18,
-                              color: KConstColors.buttonTextColor
+                    GestureDetector(
+                      onTap: (){
+                        Navigator.push(context, MaterialPageRoute(builder: (_)=>DashboardScreen()));
+                      },
+                      child: Container(
+                        height: size.height*0.06,
+                        width: size.width*0.4,
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(12),
+                            color: KConstColors.primaryColor
+                        ),
+                        child: Center(
+                          child: Text(
+                            "Sign In",
+                            style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                fontSize: 18,
+                                color: KConstColors.buttonTextColor
+                            ),
                           ),
                         ),
                       ),
