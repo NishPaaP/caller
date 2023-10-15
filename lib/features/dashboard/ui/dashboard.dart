@@ -1,4 +1,5 @@
 import 'package:caller_app/data/const/constantvariables.dart';
+import 'package:caller_app/features/credits/ui/addcredits.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 
@@ -178,7 +179,12 @@ class _DashboardScreenState extends State<DashboardScreen> {
                     ),
                   ),
                   GestureDetector(
-                    onTap: (){},
+                    onTap: (){
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (_)=>AddCreditScreen())
+                       );
+                    },
                     child: Column(
                       children: [
                         Icon(
