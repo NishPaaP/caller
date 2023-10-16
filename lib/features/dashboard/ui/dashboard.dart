@@ -1,4 +1,5 @@
 import 'package:caller_app/data/const/constantvariables.dart';
+import 'package:caller_app/features/calls/ui/callscreen.dart';
 import 'package:caller_app/features/credits/ui/addcredits.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
@@ -145,7 +146,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
                     child: Column(
                       children: [
                         Icon(
-                            CupertinoIcons.chat_bubble_2_fill,
+                          CupertinoIcons.bubble_left_bubble_right_fill,
                         color: Colors.white,
                           size: 30,
                         ),
@@ -160,7 +161,9 @@ class _DashboardScreenState extends State<DashboardScreen> {
                     ),
                   ),
                   GestureDetector(
-                    onTap: (){},
+                    onTap: (){
+                      Navigator.push(context, MaterialPageRoute(builder: (_)=>CallScreen()));
+                    },
                     child: Column(
                       children: [
                         Icon(

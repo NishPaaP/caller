@@ -32,6 +32,7 @@ class _AddCreditScreenState extends State<AddCreditScreen> {
       body: Container(
         width: double.infinity,
         height: size.height*1,
+        padding: EdgeInsets.only(left: 18,right: 18),
         child: Column(
           children: [
             SizedBox(height: size.height*0.06),
