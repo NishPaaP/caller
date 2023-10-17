@@ -71,16 +71,22 @@ class _ContractScreenState extends State<ContractScreen> {
                               topRight: Radius.circular(40),
                             )
                         ),
-                        child: Column(
-                          children: [
-
-                          ],
-                        ),
+                        child: ListView.separated(
+                            itemBuilder: (_,index)=>ListTile(
+                              title: Text("Jhon Doe",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 20)),
+                              leading: CircleAvatar(
+                                radius: 25,
+                                backgroundColor: KConstColors.primaryColor.withOpacity(0.7),
+                              ),
+                            ),
+                            separatorBuilder: (_,index)=>SizedBox(height: 10),
+                            itemCount: 20),
                       ),
                       Positioned(
                         bottom: 0,
                         child: Container(
                           width: 400,
+                          color: Colors.white,
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceAround,
                             children: [

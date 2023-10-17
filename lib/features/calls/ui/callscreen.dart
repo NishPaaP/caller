@@ -1,5 +1,8 @@
+import 'package:caller_app/data/const/constantvariables.dart';
 import 'package:caller_app/features/calls/contract/ui/contract_screen.dart';
 import 'package:caller_app/features/calls/recent/ui/recent_call_screen.dart';
+import 'package:caller_app/features/credits/ui/addcredits.dart';
+import 'package:caller_app/features/dashboard/ui/dashboard.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -26,10 +29,12 @@ class _CallScreenState extends State<CallScreen> {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 IconButton(onPressed: (){
-                  Navigator.pop(context);
+                  Navigator.push(context, MaterialPageRoute(builder: (_)=>DashboardScreen()));
                 }, icon: Icon(CupertinoIcons.arrow_left)),
                 TextButton(
-                    onPressed:(){}, child: Text("BUY CREDIT")),
+                    onPressed:(){
+                      Navigator.push(context, MaterialPageRoute(builder: (_)=>AddCreditScreen()));
+                    }, child: Text("BUY CREDIT",style: TextStyle(color: KConstColors.primaryColor),)),
               ],
             ),
             SizedBox(height: size.height*0.08),
