@@ -1,6 +1,7 @@
 import 'package:caller_app/data/const/constantvariables.dart';
 import 'package:caller_app/features/calls/ui/callscreen.dart';
 import 'package:caller_app/features/credits/ui/addcredits.dart';
+import 'package:caller_app/features/setting/ui/setting_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 
@@ -206,7 +207,9 @@ class _DashboardScreenState extends State<DashboardScreen> {
                     ),
                   ),
                   GestureDetector(
-                    onTap: (){},
+                    onTap: (){
+                      Navigator.push(context, MaterialPageRoute(builder: (_)=>SettingsScreen()));
+                    },
                     child: Column(
                       children: [
                         Icon(
