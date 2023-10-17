@@ -1,3 +1,5 @@
+import 'package:caller_app/features/calls/contract/ui/contract_screen.dart';
+import 'package:caller_app/features/calls/recent/ui/recent_call_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -402,23 +404,38 @@ class _CallScreenState extends State<CallScreen> {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
-                Column(
-                  children: [
-                    Icon(CupertinoIcons.clock,size: 35,),
-                    Text("Recent",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 16),)
-                  ],
+                GestureDetector(
+                  onTap: (){
+                    Navigator.push(context, MaterialPageRoute(builder: (_)=>RecentCallScreen()));
+                  },
+                  child: Column(
+                    children: [
+                      Icon(CupertinoIcons.clock,size: 35,),
+                      Text("Recent",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 16),)
+                    ],
+                  ),
                 ),
-                Column(
-                  children: [
-                    Icon(Icons.dialpad_sharp,size: 35,),
-                    Text("Dial",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 16),)
-                  ],
+                GestureDetector(
+                  onTap: (){
+                    Navigator.push(context, MaterialPageRoute(builder: (_)=>CallScreen()));
+                  },
+                  child: Column(
+                    children: [
+                      Icon(Icons.dialpad_sharp,size: 35,),
+                      Text("Dial",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 16),)
+                    ],
+                  ),
                 ),
-                Column(
-                  children: [
-                    Icon(Icons.account_box_sharp,size: 35,),
-                    Text("Contract",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 16),)
-                  ],
+                GestureDetector(
+                  onTap: (){
+                    Navigator.push(context,MaterialPageRoute(builder: (_)=>ContractScreen()));
+                  },
+                  child: Column(
+                    children: [
+                      Icon(Icons.account_box_sharp,size: 35,),
+                      Text("Contract",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 16),)
+                    ],
+                  ),
                 ),
               ],
             )
