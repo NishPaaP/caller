@@ -1,6 +1,7 @@
 import 'package:caller_app/data/const/constantvariables.dart';
 import 'package:caller_app/features/calls/ui/callscreen.dart';
 import 'package:caller_app/features/credits/ui/addcredits.dart';
+import 'package:caller_app/features/setting/account/ui/account_profile_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 
@@ -71,12 +72,14 @@ class _SettingsScreenState extends State<SettingsScreen> {
                     ),
                     child: Column(
                       children: [
-                        SizedBox(height: size.height*0.025),
+                        SizedBox(height: size.height*0.05),
                         Row(
                           children: [
                             SizedBox(width: size.width*0.03),
                             Icon(CupertinoIcons.person_solid,size: 50,),
-                            TextButton(onPressed: (){}, child: Text("Account Profile",style: TextStyle(fontSize: 22,color: KConstColors.primaryColor),)),
+                            TextButton(onPressed: (){
+                              Navigator.push(context, MaterialPageRoute(builder: (_)=>AccountProfileScreen()));
+                            }, child: Text("Account Profile",style: TextStyle(fontSize: 22,color: KConstColors.primaryColor),)),
                           ],
                         ),
                         Divider(height: 20,color: Colors.black,thickness: 1.5),
@@ -85,7 +88,9 @@ class _SettingsScreenState extends State<SettingsScreen> {
                           children: [
                             SizedBox(width: size.width*0.03),
                             Icon(CupertinoIcons.creditcard_fill,size: 50,),
-                            TextButton(onPressed: (){}, child: Text("Buy Credit",style: TextStyle(fontSize: 22,color: KConstColors.primaryColor),)),
+                            TextButton(onPressed: (){
+                              Navigator.push(context, MaterialPageRoute(builder: (_)=>AddCreditScreen()));
+                            }, child: Text("Buy Credit",style: TextStyle(fontSize: 22,color: KConstColors.primaryColor),)),
                           ],
                         ),
                         Divider(height: 20,color: Colors.black,thickness: 1.5),
@@ -103,7 +108,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                           children: [
                             SizedBox(width: size.width*0.03),
                             Icon(Icons.exit_to_app_sharp,size: 50,),
-                            TextButton(onPressed: (){}, child: Text("Account Profile",style: TextStyle(fontSize: 22,color: KConstColors.primaryColor),)),
+                            TextButton(onPressed: (){}, child: Text("Log Out",style: TextStyle(fontSize: 22,color: KConstColors.primaryColor),)),
                           ],
                         ),
 
